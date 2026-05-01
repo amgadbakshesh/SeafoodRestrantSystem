@@ -2,7 +2,7 @@
 
 A C# WinForms application for managing seafood restaurant orders.
 
-==>Features
+==> Features
 - Menu display
 - Add to order
 - Calculate total and tax
@@ -11,3 +11,6 @@ A C# WinForms application for managing seafood restaurant orders.
 ==> Technologies
 - C#
 - WinForms
+
+==> Project Proposal
+[View Proposal](./SeafoodSystem_Proposal.pdf)
