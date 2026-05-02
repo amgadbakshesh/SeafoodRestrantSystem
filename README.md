@@ -16,5 +16,5 @@ A C# WinForms application for managing seafood restaurant orders.
 [View Proposal](./SeafoodSystem_Proposal.pdf)
 
 ==> Project presentation
-[View Proposal](./opppresentation.pdf)
+[View Proposal](./oop_presentation.pdf)
 
