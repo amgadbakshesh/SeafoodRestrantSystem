@@ -13,8 +13,15 @@ namespace SeafoodSysteBeta.Managers
 
             if (code == "SALE20")
                 return subtotal * 0.2;
-            if (code == "SALE30")
-                return subtotal * 0.3;
+            if (code == "SAVE100")
+                if (subtotal < 150)
+                {
+                  MessageBox.Show("cart must be at least 150 to apply promo code");
+                  return 0;
+                }
+                else
+                    return 100;
+                   
 
             return 0;
         }

@@ -10,18 +10,20 @@ namespace SeafoodSysteBeta.Managers
         private OrderItem[] orders = new OrderItem[100];
         private int count = 0;
 
+        //order add one by one
         public void AddOrder(OrderItem order)
         {
             orders[count++] = order;
         }
-
+        //return all order
         public OrderItem[] GetOrders()
         {
             return orders;
         }
 
-        public int Count => count;
-
+        public int Count
+        { get { return count; } }
+        //Subtotal
         public double GetSubtotal()
         {
             double total = 0;
@@ -31,7 +33,12 @@ namespace SeafoodSysteBeta.Managers
             }
             return total;
         }
-
+        //tax
+        public double GetTax(double subtotal)
+        {
+            return subtotal * 0.14;
+        } 
+        //clear 
         public void Clear()
         {
             orders = new OrderItem[100];

@@ -207,7 +207,7 @@
             btnPromo_Click.Text = "Apply Code";
             btnPromo_Click.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnPromo_Click.UseVisualStyleBackColor = false;
-            btnPromo_Click.Click += button2_Click_1;
+            btnPromo_Click.Click += buttonApplyCode_click;
             // 
             // panel5
             // 
@@ -298,7 +298,7 @@
             button4.Text = "Clear Order";
             button4.TextImageRelation = TextImageRelation.ImageBeforeText;
             button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            button4.Click += buttoncClear_Click;
             // 
             // panel10
             // 
@@ -347,7 +347,7 @@
             button3.Text = "Generate Invoice";
             button3.TextImageRelation = TextImageRelation.ImageBeforeText;
             button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            button3.Click += buttonGenerateInvoice_Click;
             // 
             // panel6
             // 
@@ -384,7 +384,7 @@
             addbutton.Text = "Add Item";
             addbutton.TextImageRelation = TextImageRelation.ImageBeforeText;
             addbutton.UseVisualStyleBackColor = false;
-            addbutton.Click += button1_Click;
+            addbutton.Click += buttonAdditem_click;
             // 
             // txtPrice
             // 
@@ -419,6 +419,7 @@
             // comboQty
             // 
             comboQty.Cursor = Cursors.Hand;
+            comboQty.DropDownStyle = ComboBoxStyle.DropDownList;
             comboQty.FormattingEnabled = true;
             comboQty.Items.AddRange(new object[] { "1", "2", "3", "4", "5" });
             comboQty.Location = new Point(2, 169);
@@ -449,6 +450,7 @@
             // comboItem
             // 
             comboItem.Cursor = Cursors.Hand;
+            comboItem.DropDownStyle = ComboBoxStyle.DropDownList;
             comboItem.FormattingEnabled = true;
             comboItem.Location = new Point(2, 104);
             comboItem.Name = "comboItem";

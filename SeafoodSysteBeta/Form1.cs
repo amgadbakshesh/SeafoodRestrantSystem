@@ -9,8 +9,6 @@ namespace SeafoodSysteBeta
         SeafoodItem[] menu = new SeafoodItem[50];
         int menuCount = 0;
 
-
-
         OrderManager orderManager = new OrderManager();
         PromoManager promoManager = new PromoManager();
         FileManager fileManager = new FileManager();
@@ -19,36 +17,6 @@ namespace SeafoodSysteBeta
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void panel10_Paint(object sender, PaintEventArgs e)
@@ -100,25 +68,34 @@ namespace SeafoodSysteBeta
         void UpdateTotals()
         {
             double subtotal = orderManager.GetSubtotal();
-            double tax = subtotal * 0.14;
+            double tax = orderManager.GetTax(subtotal);
             double total = subtotal + tax - discount;
-
             lblSubtotal.Text = subtotal.ToString();
             lblTax.Text = tax.ToString();
             lblTotal.Text = total.ToString();
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAdditem_click(object sender, EventArgs e)
         {
+            //If user does not enter a value(comboItem)
             if (comboItem.SelectedIndex == -1)
             {
                 MessageBox.Show("Select item first!");
                 return;
             }
 
+            //index comboitem
             int index = comboItem.SelectedIndex;
+
+            //If user does not enter a value(comboQty)
+            if (comboQty.SelectedIndex == -1)
+            {
+                MessageBox.Show("Select quantity!");
+                return;
+            }
             int qty = int.Parse(comboQty.Text);
+
 
             SeafoodItem selectedItem = menu[index];
 
@@ -147,7 +124,7 @@ namespace SeafoodSysteBeta
             listViewOrder.GridLines = true;
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void buttonApplyCode_click(object sender, EventArgs e)
         {
             double subtotal = orderManager.GetSubtotal();
 
@@ -167,7 +144,7 @@ namespace SeafoodSysteBeta
             UpdateTotals();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonGenerateInvoice_Click(object sender, EventArgs e)
         {
             string invoice = "==== INVOICE ====\n";
 
@@ -182,7 +159,7 @@ namespace SeafoodSysteBeta
             MessageBox.Show("Invoice Saved!");
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttoncClear_Click(object sender, EventArgs e)
         {
             orderManager.Clear();
             listViewOrder.Items.Clear();
@@ -202,7 +179,7 @@ namespace SeafoodSysteBeta
                 {
                     txtPrice.Text = menu[i].Price.ToString();
 
-                    
+
                     break;
                 }
             }
@@ -211,6 +188,11 @@ namespace SeafoodSysteBeta
         }
 
         private void txtPromo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Addbutton_Click(object sender, EventArgs e)
         {
 
         }
